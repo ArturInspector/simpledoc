@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-office-ribbon-bg text-gray-900 font-sans antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Scrollbar styling в стиле Office */
+  ::-webkit-scrollbar {
+    width: 16px;
+    height: 16px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-office-ribbon-bg;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 rounded-lg border-2 border-office-ribbon-bg;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-400;
+  }
+}
+
+@layer components {
+  /* Office-style buttons */
+  .btn-office {
+    @apply px-3 py-1.5 text-sm font-medium rounded;
+    @apply bg-white border border-office-ribbon-border;
+    @apply hover:bg-office-ribbon-hover;
+    @apply active:bg-office-ribbon-active;
+    @apply transition-colors duration-150;
+    @apply disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-office-primary {
+    @apply px-3 py-1.5 text-sm font-medium rounded;
+    @apply bg-office-blue-500 text-white border-office-blue-600;
+    @apply hover:bg-office-blue-600;
+    @apply active:bg-office-blue-700;
+    @apply transition-colors duration-150;
+    @apply disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  /* Ribbon-style panels */
+  .ribbon-panel {
+    @apply bg-office-ribbon-bg border-b border-office-ribbon-border;
+  }
+
+  /* Input fields */
+  .input-office {
+    @apply w-full px-2 py-1 text-sm border border-office-ribbon-border rounded;
+    @apply focus:outline-none focus:ring-2 focus:ring-office-blue-500 focus:border-transparent;
+    @apply disabled:bg-gray-100 disabled:cursor-not-allowed;
+  }
+
+  /* Card/panel */
+  .panel-office {
+    @apply bg-white border border-office-ribbon-border rounded;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@layer utilities {
+  /* Smooth transitions */
+  .transition-office {
+    transition-property: background-color, border-color, color;
+    transition-duration: 150ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
