@@ -1,5 +1,7 @@
 # SimpleDoc
 
+![SimpleDoc Overview](image.png)
+
 Professional-grade document generation and commercial proposal platform. Built for power users who demand precision, speed, and flexibility in document workflows.
 
 ## Vision
