@@ -1,26 +1,30 @@
 <script lang="ts">
-  import DocumentEditor from '$lib/components/features/DocumentEditor.svelte';
-  import { currentDocument, documents } from '$lib/stores/app';
+  import { onMount } from 'svelte';
+  import EditorLayout from '$lib/components/editor/EditorLayout.svelte';
+  import { documentActions } from '$lib/stores';
   
-  // Инициализация с тестовыми данными для демонстрации
-  $effect(() => {
-    if ($documents.length === 0) {
-      documents.set([
-        {
-          id: '1',
-          title: 'Коммерческое предложение #1',
-          templateId: 'template-1',
-          data: {
-            company_name: 'ООО Рога и Копыта',
-            client_name: 'Иван Иванов',
-          },
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-      ]);
-      currentDocument.set($documents[0]);
-    }
+  onMount(() => {
+    // Создаём новый документ при запуске
+    documentActions.create('Untitled Document');
   });
 </script>
 
-<DocumentEditor />
+<EditorLayout />
+
+<style>
+  :global(body) {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  :global(*) {
+    box-sizing: border-box;
+  }
+  
+  :global(button) {
+    font-family: inherit;
+  }
+</style>
