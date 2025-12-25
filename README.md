@@ -154,6 +154,8 @@ This project follows standard development practices:
 - [ARCHITECTURE.md](./ARCHITECTURE.md) - System architecture overview
 - [PROJECT_PLAN.md](./PROJECT_PLAN.md) - Development roadmap
 - [QUICK_START.md](./QUICK_START.md) - Setup guide
+- [USER_PIPELINE.md](./USER_PIPELINE.md) - User pipeline and Canva-like editor concept
+- [FORDESIGNER.md](./FORDESIGNER.md) - Complete design system and UI specifications
 
 ## License
 
